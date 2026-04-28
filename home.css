@@ -1,0 +1,82 @@
+
+
+:root {
+    --primary: #F6E7D7;
+    --secondary: #E4B07B;
+    --accent1: #C98A53;
+    --accent2: #8B5E3C;
+
+    --heading-font: 'Shadows Into Light', cursive;
+    --paragraph-font: 'Jost', sans-serif;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary);
+    color: #333;
+    font-family: var(--paragraph-font);
+}
+
+header {
+    background: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+}
+
+
+header {
+    background: var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+header .logo {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+}
+
+nav a {
+    margin-left: 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+nav a.active {
+    color: var(--accent1);
+}
+
+nav a:hover {
+    color: var(--accent1);
+}
+
+
+.about-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+    background: var(--secondary);
+    color: #fff;
+}
