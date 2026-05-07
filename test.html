@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class='wrapper'>
+<form id='nameForm'>
+<div class='form-uname'>
+    <label id='nameLable' for='nameField'>Create a username:</label>
+    <input id='nameField' type='text' maxlength='25'></input>
+</div>
+<div class='form-sub'>
+    <button id='subButton' type='button'>Print your name!</button>
+</div>
+</form>
+
+<div>
+    <p id='result'></p></div>
+</div>
+</body>
+<script>function getUserName() {
+var nameField = document.getElementById('nameField').value;
+var result = document.getElementById('result');
+
+if (nameField.length < 3) {
+    result.textContent = 'Username must contain at least 3 characters';
+    //alert('Username must contain at least 3 characters');
+} else {
+    result.textContent = 'Your username is: ' + nameField;
+    //alert(nameField);
+}
+}
+
+
+var subButton = document.getElementById('subButton');
+subButton.addEventListener('click', getUserName, false); </script>
+</html>
