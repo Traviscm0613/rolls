@@ -1,6 +1,15 @@
-function captureInput() {
-// Get the value from the input field
-let userName = document.getElementById("userInput").value;
-// Display the captured value
-alert("Hello, " + userName + "!");
-}
+window.saveEmail = async () => {
+  const email = document.getElementById("email_field").value.trim();
+
+  if (!email) {
+    alert("Please enter an email first.");
+    return;
+  }
+
+  await setDoc(doc(db, "emails", email), {
+    email,
+    timestamp: new Date()
+  });
+
+  alert("Saved to Firebase!");
+};
