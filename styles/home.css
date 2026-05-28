@@ -1,158 +1,218 @@
-/* General Styles */
-body {
-  background-color: #F6E7D7;
+/* ============================
+   GLOBAL STYLES
+============================ */
+:root {
+    --primary: #F6E7D7;
+    --secondary: #E4B07B;
+    --accent1: #C98A53;
+    --accent2: #8B5E3C;
+
+    --heading-font: 'Shadows Into Light', cursive;
+    --paragraph-font: 'Jost', sans-serif;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary);
+    color: #333;
+    font-family: var(--paragraph-font);
+    line-height: 1.6;
+}
+
+/* ============================
+   NAVIGATION
+============================ */
 nav {
-  background-color: #E4B07B ;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 4fr;
-  grid-template-rows: 50px 50px 50px;
-  /* column-gap: 1rem; */
-  align-items: center;
-  padding: 0.5rem 1rem;
-  
+    background-color: var(--secondary);
+    display: grid;
+    grid-template-columns: 150px repeat(3, auto) 1fr;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    gap: 1.5rem;
 }
 
 nav img {
-  width: auto;
-  height: 150px;
-  grid-column: 1;
-  grid-row: 1 / span 3;
-  margin-right: 20px;
+    height: 110px;
+    width: auto;
 }
 
 nav li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--accent1);
 }
 
 #rocky {
-  grid-column-start: 4;
-  grid-column-end: 6;
-  grid-row: 3;
+    font-family: var(--heading-font);
+    font-size: 3rem;
+    text-align: right;
+    grid-column: 5;
 }
 
-nav > :nth-child(2) { grid-column: 2; }
-nav > :nth-child(3) { grid-column: 3; }
-nav > :nth-child(4) { grid-column: 4; }
+/* ============================
+   MAIN CONTENT
+============================ */
+#middleimgs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+}
 
+#middleimgs img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+#purpose {
+    font-size: 3.4rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-family: var(--heading-font);
+}
+
+#middleimgs p {
+    font-size: 1.15rem;
+    margin-top: 1rem;
+}
+
+/* ============================
+   CENTER IMAGE
+============================ */
+#underimage {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#underimage img {
+    display: block;
+    margin: -4rem auto 3rem; /* pull it up to align with second image */
+    width: min(450px, 90%);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+/* ============================
+   EMAIL INPUT
+============================ */
+#email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+#email input {
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 2px solid var(--accent1);
+    font-size: 1rem;
+    width: 260px;
+}
+
+#email button {
+    padding: 12px 20px;
+    background: var(--accent1);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+#email button:hover {
+    background: var(--accent2);
+}
+
+/* ============================
+   FOOTER
+============================ */
 #footer {
-  background-color: #E4B07B ;
-  display: grid;
-  grid-template-columns: auto 10% auto auto auto auto 1fr auto auto auto;
-  grid-template-rows: auto;
-  column-gap: 60px;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  font-size: 20px;
+    background-color: var(--secondary);
+    display: grid;
+    grid-template-columns: 150px repeat(6, auto) 1fr;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    font-size: 1.1rem;
+    gap: 2rem;
 }
 
 #footer img {
-  width: auto;
-  height: 150px;
-  grid-column: 1;
-  grid-row: 1;
-  margin-right: 20px;
-}
-
-#footer #footerul {
-  display: contents;
-}
-
-#footer ul {
-  display: contents;
+    height: 110px;
 }
 
 #footer li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
 }
 
-/* Position each li in its own grid column, starting after the logo (column 3) */
-#footer li:nth-of-type(1) { grid-column: 3; grid-row: 1; }
-#footer li:nth-of-type(2) { grid-column: 4; grid-row: 1; }
-#footer li:nth-of-type(3) { grid-column: 5; grid-row: 1; }
-#footer li:nth-of-type(4) { grid-column: 6; grid-row: 1; }
-
-/* Position social media icons in separate columns with spacing on the right */
-#footer i:nth-of-type(1) { grid-column: 8; grid-row: 1; }
-#footer i:nth-of-type(2) { grid-column: 9; grid-row: 1; }
-#footer i:nth-of-type(3) { grid-column: 10; grid-row: 1; }
-
-/* index Styles */
-#middleimgs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  column-gap: 4rem;
-  place-items: start;
-  margin: 0 auto;
-  max-width: 1200px;
+#footer i {
+    font-size: 1.6rem;
+    color: white;
+    transition: 0.3s ease;
 }
 
-
-/* Left image */
-#middleimgs img:nth-of-type(1) {
-  width: 100%;
-  height: auto;
-  margin-top: 100px;
-  grid-column: 1;
-  grid-row: 1 / span 2;
+#footer i:hover {
+    color: var(--accent1);
 }
 
-/* Purpose heading */
-#middleimgs #purpose {
-  grid-column: 2;
-  grid-row: 1;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  margin-top: 100px;
-  font-size: 3.5em;
-  text-align: center;
-}
-
-/* Main paragraph */
-#middleimgs p {
-  width: 100%;
-  grid-column: 2;
-  grid-row: 2;
-  margin: 0;
-  padding: 0;
-  margin-top: 1rem;
-}
-
-/* Right image */
-#middleimgs img:nth-of-type(2) {
-  width: 100%;
-  height: auto;
-  margin-top: 100px;
-  grid-column: 3;
-  grid-row: 1 / span 2;
-}
-#underimage {
-  display: grid;
-  grid-template-columns: 1fr;
-  place-items: center;
-  margin-top: 80px;
-}
-#email {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-#email p {
-  margin-right: 10px;
-}
+/* ============================
+   COPYRIGHT
+============================ */
 #copyright {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ============================
+   RESPONSIVE IMPROVEMENTS
+============================ */
+@media (max-width: 900px) {
+    #middleimgs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav {
+        grid-template-columns: 120px auto auto 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    #middleimgs {
+        grid-template-columns: 1fr;
+    }
+
+    #rocky {
+        text-align: center;
+        grid-column: 1 / -1;
+    }
+
+    nav {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav img {
+        margin: 0 auto;
+    }
 }
