@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect("database")
+connection = sqlite3.connect("database.db")
 cursor = connection.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS books (title TEXT, pages INTEGER, read INTEGER)")
 
@@ -13,12 +13,38 @@ while choice != 5:
     print("4) Read a book")
     print("5) Exit")
 
-    choice = input("> ")
+    choice = int(input("> "))
     if choice == 1:
+        title = input("Enter book name: ")
+        pages = int(input("Enter number of pages"))
+        read = 0
+        values = (title, pages, read)
+        cursor.execute("INSERT INTO books VALUES (?, ?, ?)", values)
         pass
     elif choice == 2:
+        title = input("Enter the book to remove: ")
+        values = (title,)
+        cursor.execute("DELETE FROM books WHERE title = ?", values)
+        connection.commit()
+        print(cursor.rowcount)
+        if cursor.rowcount == 0:
+            print("ERROR! Book does not exist")
         pass
     elif choice == 3:
+        cursor.execute("SELECT * FROM books BY title")
+        for record in cursor.fetchall():
+            print(f"{record[0]}\t{record[1]}\t{record[2]}")
         pass
     elif choice == 4:
+        cursor.execute("SELECT title FROM books ORDER BY title")
+        records = cursor.fetchall()
+        for index in range(len(records)):
+            print(f"{index+1} {records[index][0]}")
+        choice = int(input("> "))
+        selected_title = records[choice-1][0]
+        values = (records[choice-1][1] + 1, selected_title)
+        cursor.execute("UPDATE books SET read = ? WHERE title = ?", values)
         pass
+
+print("Goodbye")
+connection.close()
