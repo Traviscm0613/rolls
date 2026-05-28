@@ -1,6 +1,9 @@
 // ============================
 // FIREBASE INITIALIZATION
 // ============================
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
 const firebaseConfig = {
     apiKey: "AIzaSyClC6QLVoSF8aSeDr7gS7cwavNWLOCd-fU",
     authDomain: "rocky-mountain-rolls.firebaseapp.com",
