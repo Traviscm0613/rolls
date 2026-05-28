@@ -1,17 +1,18 @@
 // ============================
 // FIREBASE CONFIG
-// Replace with your Firebase project settings
 // ============================
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    apiKey: "YOUR_REAL_API_KEY",
+    authDomain: "rocky-mountain-rolls.firebaseapp.com",
+    projectId: "rocky-mountain-rolls",
+    storageBucket: "rocky-mountain-rolls.appspot.com",
     messagingSenderId: "YOUR_SENDER_ID",
     appId: "YOUR_APP_ID"
 };
 
-// Initialize Firebase
+// ============================
+// INITIALIZE FIREBASE (MODULAR)
+// ============================
 const app = firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
@@ -21,12 +22,11 @@ const db = firebase.firestore();
 function saveEmail() {
     const email = document.getElementById("email_field").value.trim();
 
-    if (email === "") {
+    if (!email) {
         alert("Please enter an email.");
         return;
     }
 
-    // Basic email validation
     if (!email.includes("@") || !email.includes(".")) {
         alert("Please enter a valid email.");
         return;
