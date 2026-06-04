@@ -106,19 +106,19 @@ nav a.active {
     box-shadow: 0 4px 12px rgba(0,0,0,0.18);
 }
 
-/* ============================
-   EMAIL INPUT
-============================ */
-#email {
-    display: flex;
+
+/*form*/
+#info_form {
+    display: grid;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 0;
     margin: 3rem 0;
     flex-wrap: wrap;
+    line-height: .5;
 }
 
-#email input {
+#info_form input {
     padding: 12px 16px;
     border-radius: 6px;
     border: 2px solid var(--accent1);
@@ -126,7 +126,7 @@ nav a.active {
     width: 260px;
 }
 
-#email button {
+#info_form button {
     padding: 12px 20px;
     background: var(--accent1);
     color: white;
@@ -136,14 +136,13 @@ nav a.active {
     font-weight: 600;
     transition: 0.3s ease;
 }
-
-#email button:hover {
+#info_form button:hover {
     background: var(--accent2);
 }
 
-/* ============================
-   FOOTER
-============================ */
+
+/*footer*/
+
 #footer {
     background-color: var(--secondary);
     display: grid;

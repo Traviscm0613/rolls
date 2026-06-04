@@ -34,12 +34,27 @@ What makes us unique? We make everything fresh from scratch, no frozen ingredien
         <div id="underimage">
             <img src="images/roll9.webp" alt="bottom image">
         </div>
-        
-        <div id="email">
-            <p>Email:</p>
-            <input type="text" name="email" id="email_field"> 
-            <button onclick="saveEmail()">Submit</button>
-        </div>
+
+
+        <form id="info_form">
+            <div id="first">
+                <p>First Name</p>
+                <input id="first" name="first" type="text" required />
+            </div>
+
+            <div id="last">
+                <p>Last Name</p>
+                <input id="last_field" name="last" type="text" required />
+            </div>
+            
+            <div id="email">
+                <p>Email:</p>
+                <input type="text" name="email" id="email_field" placeholder="example@mail.com"> 
+                <button onclick="saveEmail()">Submit</button>
+            </div>
+        </form>
+
+
         <div id="footer">
             <img src="images/logo1.webp" alt="Logo">
             <div id="footerul">
