@@ -36,24 +36,28 @@ What makes us unique? We make everything fresh from scratch, no frozen ingredien
         </div>
 
 
-        <form id="info_form">
-            <div id="first">
+        <form id="infoForm">
+
+            <div class="firstName">
                 <p>First Name</p>
                 <input id="first" name="first" type="text" required />
             </div>
 
-            <div id="last">
+            <div id="lastName">
                 <p>Last Name</p>
                 <input id="last_field" name="last" type="text" required />
             </div>
             
             <div id="email">
                 <p>Email:</p>
-                <input type="text" name="email" id="email_field" placeholder="example@mail.com"> 
-                <button onclick="saveEmail()">Submit</button>
+                <input type="text" name="email" id="email_field" placeholder="example@mail.com" required /> 
             </div>
-        </form>
 
+            <button type="submit">Submit</button>
+
+            
+        </form>
+        <section id="output" aria-live="polite"></section>
 
         <div id="footer">
             <img src="images/logo1.webp" alt="Logo">

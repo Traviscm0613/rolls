@@ -60,9 +60,7 @@ nav a.active {
     grid-column: 5;
 }
 
-/* ============================
-   MAIN CONTENT
-============================ */
+/* MAIN CONTENT */
 #middleimgs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -108,17 +106,16 @@ nav a.active {
 
 
 /*form*/
-#info_form {
+#infoForm {
     display: grid;
     justify-content: center;
     align-items: center;
     gap: 0;
     margin: 3rem 0;
-    flex-wrap: wrap;
     line-height: .5;
 }
 
-#info_form input {
+#infoForm input {
     padding: 12px 16px;
     border-radius: 6px;
     border: 2px solid var(--accent1);
@@ -126,7 +123,7 @@ nav a.active {
     width: 260px;
 }
 
-#info_form button {
+#infoForm button {
     padding: 12px 20px;
     background: var(--accent1);
     color: white;
@@ -136,7 +133,7 @@ nav a.active {
     font-weight: 600;
     transition: 0.3s ease;
 }
-#info_form button:hover {
+#infoForm button:hover {
     background: var(--accent2);
 }
 
