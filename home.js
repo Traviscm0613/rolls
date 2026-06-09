@@ -58,29 +58,22 @@ function saveEmail() {
 
 
 /* form work */
-const form = document.querySelector("#infoForm");
+const form = document.getElementById("infoForm");
+const output = document.getElementById("output");
 
+form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page refresh
 
+    const firstName = document.getElementById("first").value;
+    const lastName = document.getElementById("last_field").value;
+    const email = document.getElementById("email_field").value;
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  output.textContent = "";
-
-  const firstName = form.first.value.trim();
-  const lastName = form.last.value.trim();
-  const email = form.email.value.trim();
-
-  saveEmail(); // saves to Firestore
-
-  output.innerHTML = `
-    <h2>Contact Submitted</h2>
-    <p>${firstName} ${lastName}</p>
-    <p>Email: ${email}</p>
-  `;
-
-  form.reset();
+    output.innerHTML = `
+        <h2>Contact Submitted</h2>
+        <p>Name: ${firstName} ${lastName}</p>
+        <p>Email: ${email}</p>
+    `;
 });
-
-          
+  
 
 
