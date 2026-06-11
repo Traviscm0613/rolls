@@ -1,4 +1,4 @@
-
+/*
 import { initializeApp } from "firebase/app";
 import{ getAuth} from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore'
@@ -55,25 +55,35 @@ function saveEmail() {
         });
 }
 
-
+*/
 
 /* form work */
+
 const form = document.getElementById("infoForm");
-const output = document.getElementById("output");
+const tableBody = document.getElementById("tableBody");
 
 form.addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent page refresh
+    event.preventDefault();
 
     const firstName = document.getElementById("first").value;
     const lastName = document.getElementById("last_field").value;
     const email = document.getElementById("email_field").value;
 
-    output.innerHTML = `
-        <h2>Contact Submitted</h2>
-        <p>Name: ${firstName} ${lastName}</p>
-        <p>Email: ${email}</p>
+    // if you want to add multiple infos
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${firstName}</td>
+        <td>${lastName}</td>
+        <td>${email}</td>
     `;
+
+    // Add row to table
+    tableBody.appendChild(row);
+
+    // firestone whenever that works
+    saveEmail();
+
+    // clears form
+    form.reset();
 });
-  
-
-
