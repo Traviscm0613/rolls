@@ -57,6 +57,9 @@ function saveEmail() {
 }
 
 
+
+
+
 /* form work */
 
 const form = document.getElementById("infoForm");
@@ -68,6 +71,7 @@ form.addEventListener("submit", function(event) {
     const firstName = document.getElementById("first").value;
     const lastName = document.getElementById("last_field").value;
     const email = document.getElementById("email_field").value;
+    const address = document.getElementById("address_field").value;
 
     // if you want to add multiple infos
     const row = document.createElement("tr");
@@ -76,6 +80,7 @@ form.addEventListener("submit", function(event) {
         <td>${firstName}</td>
         <td>${lastName}</td>
         <td>${email}</td>
+        <td>${address}</td>
     `;
 
     // Add row to table
@@ -87,3 +92,7 @@ form.addEventListener("submit", function(event) {
     // clears form
     form.reset();
 });
+
+
+
+
