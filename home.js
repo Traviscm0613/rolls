@@ -45,6 +45,10 @@ async function saveEmail(firstName, lastName, email, address) {
     }
 }
 
+
+
+
+
 // Form Submission
 form.addEventListener("submit", async function(event) {
     event.preventDefault();
