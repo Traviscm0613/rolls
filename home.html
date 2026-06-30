@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav>
-        <img src="images/logo1.webp" alt="Logo">
+        <img src="images/logo1.png" alt="Logo">
         <li><a href="home.html">Home</a></li>
         <li><a href="order.html">Order</a></li>
         <li><a href="about.html" class="active">About</a></li>
@@ -23,16 +23,17 @@
             <h1 id="purpose">Purpose</h1>
             <p>An online destination for lovers of cinnamon rolls and other baked goods! 
 
-The idea is simple: have an online place to see my product, be able to do purchases and see reviews! 
+This website is to be able to take a look at the product but as well you may make your purchase below!
 
-Visitors will find product images, seasonal recipes, plus user-submitted photos and reviews. 
+What makes us unique? We make everything fresh from scratch, no frozen ingredients or doughs! Even the icing is homemade!
 
-What makes us unique? We make everything fresh from scratch, no frozen ingredients or doughs! This is a business by my parents, but they didn't get very far so I wanted to continue the legacy and make it work because it's their passion and mine too!</p>
+Any tips? Write a review below as well!
+</p>
             <img src="images/roll6.webp" alt="right image">
         </div>
         
         <div id="underimage">
-            <img src="images/roll9.webp" alt="bottom image">
+            <img src="images/roll_new2.png" alt="bottom image">
         </div>
 
         <h2 id="signup-title">Join Our Newsletter!</h2>
@@ -56,7 +57,19 @@ What makes us unique? We make everything fresh from scratch, no frozen ingredien
             </div>
             <button>Submit</button>
         </form>
-
+        <form id="infoForm">
+            <div id="review">
+                <p>Write us a review!</p>
+                <style>
+                    #review{
+                        text-align:center;
+                    }
+                </style>
+                <input id="address_field" type="text" required /> 
+            </div>
+            <button>Submit</button>
+        </form>
+        <!-- contact info table -->
         <table id="contactTable">
         <thead>
             <tr>
@@ -70,8 +83,19 @@ What makes us unique? We make everything fresh from scratch, no frozen ingredien
         </tbody>
         </table>
 
+        <!-- review table -->
+        <table id="contactTable">
+        <thead>
+            <tr>
+                <th>Your review -</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+        </table>
+
         <div id="footer">
-            <img src="images/logo1.webp" alt="Logo">
+            <img src="images/logo1.png" alt="Logo">
             <div id="footerul">
                 <ul>
                     <li>Link One</li>

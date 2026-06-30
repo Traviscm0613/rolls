@@ -25,6 +25,7 @@ const db = getFirestore(app);
 
 // Form Elements
 const form = document.getElementById("infoForm");
+const form = document.getElementById("reviewForm");
 const tableBody = document.getElementById("tableBody");
 
 // Save Data to Firestore
@@ -36,6 +37,18 @@ async function saveEmail(firstName, lastName, email, address) {
             email: email,
             address: address,
             timestamp: new Date()
+        });
+
+        alert("Information saved successfully!");
+    } catch (error) {
+        console.error("Error saving document:", error);
+        alert("Error saving information. Check the console.");
+    }
+}
+async function saveReview(review) {
+    try {
+        await addDoc(collection(db, "reviews"), {
+            review: review
         });
 
         alert("Information saved successfully!");
@@ -57,6 +70,8 @@ form.addEventListener("submit", async function(event) {
     const lastName = document.getElementById("last_field").value.trim();
     const email = document.getElementById("email_field").value.trim();
     const address = document.getElementById("address_field").value.trim();
+    const address = document.getElementById("address_field").value.trim();
+    const review = document.getElementById("review").value.trim();
 
     // Email Validation
     if (!email.includes("@") || !email.includes(".")) {
@@ -72,16 +87,23 @@ form.addEventListener("submit", async function(event) {
         <td>${lastName}</td>
         <td>${email}</td>
         <td>${address}</td>
+        <td>${review}</td>
+        
     `;
 
     tableBody.appendChild(row);
 
-    // Save to Firestore
+    // Save contact info to Firestore
     await saveEmail(
         firstName,
         lastName,
         email,
         address
+    );
+    
+    // Save review to Firestone
+    await saveReview(
+        review
     );
 
     // Clear Form
