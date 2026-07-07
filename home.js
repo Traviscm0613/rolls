@@ -18,15 +18,18 @@ const firebaseConfig = {
     measurementId: "G-X2B2NCHSQ5"
 };
 
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 // Form Elements
-const form = document.getElementById("infoForm");
-const form = document.getElementById("reviewForm");
-const tableBody = document.getElementById("tableBody");
+const infoForm = document.getElementById("infoForm");
+const reviewForm = document.getElementById("reviewForm");
+const tableBody = document.getElementById("contactTableBody");
+const reviewTableBody = document.getElementById("reviewTableBody");
 
 // Save Data to Firestore
 async function saveEmail(firstName, lastName, email, address) {
@@ -39,6 +42,8 @@ async function saveEmail(firstName, lastName, email, address) {
             timestamp: new Date()
         });
 
+
+        //Error handling
         alert("Information saved successfully!");
     } catch (error) {
         console.error("Error saving document:", error);
@@ -48,9 +53,12 @@ async function saveEmail(firstName, lastName, email, address) {
 async function saveReview(review) {
     try {
         await addDoc(collection(db, "reviews"), {
-            review: review
+            review: review,
+            timestamp: new Date()
         });
 
+
+        //Error handling
         alert("Information saved successfully!");
     } catch (error) {
         console.error("Error saving document:", error);
@@ -63,15 +71,13 @@ async function saveReview(review) {
 
 
 // Form Submission
-form.addEventListener("submit", async function(event) {
+infoForm.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const firstName = document.getElementById("first").value.trim();
     const lastName = document.getElementById("last_field").value.trim();
     const email = document.getElementById("email_field").value.trim();
     const address = document.getElementById("address_field").value.trim();
-    const address = document.getElementById("address_field").value.trim();
-    const review = document.getElementById("review").value.trim();
 
     // Email Validation
     if (!email.includes("@") || !email.includes(".")) {
@@ -82,12 +88,12 @@ form.addEventListener("submit", async function(event) {
     // Add Row to Table
     const row = document.createElement("tr");
 
+    //this creates the html for the results of the form
     row.innerHTML = `
         <td>${firstName}</td>
         <td>${lastName}</td>
         <td>${email}</td>
         <td>${address}</td>
-        <td>${review}</td>
         
     `;
 
@@ -101,11 +107,26 @@ form.addEventListener("submit", async function(event) {
         address
     );
     
-    // Save review to Firestone
-    await saveReview(
-        review
-    );
-
     // Clear Form
-    form.reset();
+    infoForm.reset();
+});
+
+//This is for the review form, its a copy of the last one.
+reviewForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    
+    const review = document.getElementById("review_field").value.trim();
+    
+    const row = document.createElement("tr");
+    
+    row.innerHTML = `
+    <td>${review}</td>
+    `;
+
+    reviewTableBody.appendChild(row);
+
+    // Save review to Firestone
+    await saveReview(review);
+
+    reviewForm.reset();
 });

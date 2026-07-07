@@ -13,7 +13,7 @@
         <img src="images/logo1.png" alt="Logo">
         <li><a href="home.html">Home</a></li>
         <li><a href="order.html">Order</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="about.html">About</a></li>
         <h1 id="rocky">Rocky Mountain Rolls</h1>
     </nav>
         
@@ -57,15 +57,10 @@ Any tips? Write a review below as well!
             </div>
             <button>Submit</button>
         </form>
-        <form id="infoForm">
+        <form id="reviewForm">
             <div id="review">
                 <p>Write us a review!</p>
-                <style>
-                    #review{
-                        text-align:center;
-                    }
-                </style>
-                <input id="address_field" type="text" required /> 
+                <input id="review_field" type="text" required /> 
             </div>
             <button>Submit</button>
         </form>
@@ -79,30 +74,29 @@ Any tips? Write a review below as well!
                 <th>Address</th>
             </tr>
         </thead>
-        <tbody id="tableBody">
+        <tbody id="contactTableBody">
         </tbody>
         </table>
 
         <!-- review table -->
-        <table id="contactTable">
+        <table id="reviewTable">
         <thead>
             <tr>
                 <th>Your review -</th>
             </tr>
         </thead>
-        <tbody id="tableBody">
+        <tbody id="reviewTableBody">
         </tbody>
         </table>
 
         <div id="footer">
             <img src="images/logo1.png" alt="Logo">
             <div id="footerul">
-                <ul>
-                    <li>Link One</li>
-                    <li>Link Two</li>
-                    <li>Link Three</li>
-                    <li>Link Four</li>
-                </ul>
+                <nav>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="about.html">About</a></li>
+                </nav>
                 <div class="socials">
                     <i class="fa-brands fa-instagram"></i>
                     <i class="fa-brands fa-facebook"></i>
