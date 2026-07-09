@@ -202,37 +202,7 @@ nav a.active {
     opacity: 0.8;
 }
 
-/* responsiveness*/
 
-@media (max-width: 900px) {
-    #middleimgs {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    nav {
-        grid-template-columns: 120px auto auto 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    #middleimgs {
-        grid-template-columns: 1fr;
-    }
-
-    #rocky {
-        text-align: center;
-        grid-column: 1 / -1;
-    }
-
-    nav {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    nav img {
-        margin: 0 auto;
-    }
-}
 
 #contactTable {
     width: 80%;
@@ -251,9 +221,7 @@ nav a.active {
     background-color: #f4f4f4;
 }
 
-/* ============================
-   CONTACT FORM
-============================ */
+/* contact form */
 #infoForm {
     max-width: 500px;
     margin: 4rem auto;
@@ -450,3 +418,36 @@ nav a.active {
 #review{
     text-align:center;
     }
+
+
+/* responsiveness*/
+
+@media (max-width: 900px) {
+    #middleimgs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    nav {
+        grid-template-columns: 120px auto auto 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    #middleimgs {
+        grid-template-columns: 1fr;
+    }
+
+    #rocky {
+        text-align: center;
+        grid-column: 1 / -1;
+    }
+
+    nav {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav img {
+        margin: 0 auto;
+    }
+}
