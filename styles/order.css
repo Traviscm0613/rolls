@@ -1,6 +1,4 @@
-/* ===========================
-   GLOBAL STYLES
-=========================== */
+/* styles*/
 :root {
     --primary: #F6E7D7;
     --secondary: #E4B07B;
@@ -18,9 +16,7 @@ body {
     color: #333;
 }
 
-/* ===========================
-   NAVIGATION
-=========================== */
+/* navigation*/
 nav {
     background: var(--secondary);
     display: flex;
@@ -55,9 +51,7 @@ nav a.active {
     font-family: var(--heading-font);
 }
 
-/* ===========================
-   ORDER PAGE LAYOUT
-=========================== */
+/*order page layout*/
 main {
     max-width: 1200px;
     margin: auto;
@@ -87,9 +81,7 @@ main {
     border-radius: 10px;
 }
 
-/* ===========================
-   CONTACT BOX
-=========================== */
+/*contact box*/
 .buy {
     margin-top: 4rem;
     text-align: center;
@@ -104,9 +96,7 @@ main {
     border-radius: 10px;
 }
 
-/* ===========================
-   FOOTER
-=========================== */
+/*footer*/
 footer {
     margin-top: 4rem;
 }
@@ -156,9 +146,7 @@ footer {
 }
 
 
-/* ============================
-   CONTACT FORM
-============================ */
+/*contact form */
 #infoForm {
     max-width: 500px;
     margin: 4rem auto;

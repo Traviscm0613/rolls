@@ -1,6 +1,4 @@
-/* ============================
-   GLOBAL STYLES
-============================ */
+/*GLOBAL STYLES*/
 :root {
     --primary: #F6E7D7;
     --secondary: #E4B07B;
@@ -20,9 +18,7 @@ body {
     line-height: 1.6;
 }
 
-/* ============================
-   NAVIGATION
-============================ */
+/*NAVIGATION*/
 nav {
     background-color: var(--secondary);
     display: grid;
@@ -88,9 +84,7 @@ nav a.active {
     margin-top: 1rem;
 }
 
-/* ============================
-   CENTER IMAGE
-============================ */
+/*CENTER IMAGE */
 #underimage {
     max-width: 1200px;
     margin: 0 auto;
